@@ -1,0 +1,11 @@
+
+transformers
+vncorenlp
+fairseq
+fastapi
+uvicorn
+pyngrok
+pyyaml==5.4.1
+numpy
+scipy
+# git+https://github.com/DatCanCode/sentence-transformers
