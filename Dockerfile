@@ -5,9 +5,6 @@ RUN apt install -y default-jre
 RUN apt install -y wget
 
 WORKDIR /code
-RUN git lfs install
-RUN git lfs fetch --all
-RUN git lfs checkout
 COPY requirements.txt .
 COPY phoBERT_sentence /code/phoBERT_sentence
 COPY bpe /code/bpe
