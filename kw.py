@@ -36,6 +36,11 @@ def get_keywords(vietnamese_text):
     keywords = [i.replace(".", "") for i in keywords]
     keywords = list(set(keywords))
     data = list(map(lambda x: get_similarity([x, vietnamese_text]), keywords))
+    data = [(float(similarity), keyword) for similarity, keyword in data]
     keywords = sorted(data, key=sorted_key, reverse=True)
     keywords = list(filter(filter_lower, keywords))
     return keywords
+
+if __name__ == "__main__":
+    text = "Chợt nhìn đôi bàn tay em run nắm lấy bờ vai rất lâu"
+    print(get_keywords(text))
