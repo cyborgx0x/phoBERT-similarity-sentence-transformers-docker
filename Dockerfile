@@ -6,7 +6,7 @@ RUN apt install -y wget
 
 WORKDIR /code
 RUN pip install torch==2.1.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
-RUN pip install transformers
+RUN pip install transformers==4.28
 RUN pip install vncorenlp
 RUN pip install fairseq
 RUN pip install fastbpe
@@ -34,6 +34,7 @@ COPY phoBERT_sentence /code/phoBERT_sentence
 COPY bpe /code/bpe
 COPY compare.py /code/
 COPY main.py /code/
+RUN pip install underthesea
 
 
 EXPOSE 8000
